@@ -1,0 +1,27 @@
+version: '3'
+services:
+
+  server:
+    container_name: buzzni-test-server
+    restart: always
+    build:
+      context: server
+      dockerfile: Dockerfile
+    image: buzzni-test-server
+    ports:
+     - "5000:5000"
+    volumes:
+     - ./server:/server
+
+  client:
+    container_name: buzzni-test-client
+    restart: always
+    build:
+      context: client
+      dockerfile: Dockerfile
+    image: buzzni-test-client
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./client:/client
+
