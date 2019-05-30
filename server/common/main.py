@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, jsonify
 
 
 def create_app(config_object=None):
@@ -7,8 +7,9 @@ def create_app(config_object=None):
                 template_folder="./webapp/dist")
 
     app.config.from_object(config_object)
-    @app.route('/')
-    def index(path):
-        return render_template("index.html")
-    return app
 
+    @app.route('/ping')
+    def ping():
+        return jsonify(dict(pong='pong'))
+
+    return app
