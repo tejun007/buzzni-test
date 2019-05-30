@@ -30,3 +30,18 @@ services:
       - "5001:5001"
     volumes:
      - ./server:/server
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    restart: always
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+      - MONGODB_USER="test"
+      - MONGODB_PASS="test"
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - "27017:27017"
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
