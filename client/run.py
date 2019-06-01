@@ -1,7 +1,7 @@
 import sys
 
-from web.config import Config
-from web.main import create_app
+from client.web.config import Config
+from client.web.main import create_app
 
 app = create_app(Config)
 

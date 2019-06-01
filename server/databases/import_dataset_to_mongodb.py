@@ -1,7 +1,12 @@
+import os
+
 import joblib
 import pymongo
 
-timeline_goods_list = joblib.load("timeline_goods_dump.dat")
+from server.common.config import Config
+
+dump_data_dir = os.path.dirname(os.path.abspath(__file__))
+timeline_goods_list = joblib.load(dump_data_dir + "/timeline_goods_dump.dat")
 
 print('')
 print('============ raw dataset ==============')
@@ -9,7 +14,7 @@ print(timeline_goods_list)
 print('COUNT: ', len(timeline_goods_list))
 print('========================================')
 
-test_mongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
+test_mongo_client = pymongo.MongoClient(Config.MONGO_DB)
 
 
 # test_mongo_client.admin.add_user('test', 'test', roles=[{'role': 'readWrite', 'db': 'mall'}])

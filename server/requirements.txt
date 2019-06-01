@@ -1,2 +1,4 @@
 flask==1.0.2
 scikit-learn
+joblib==0.13.2
+pymongo==3.8.0

@@ -1,0 +1,60 @@
+2019-06-01T10:13:35.127+0000 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-06-01T10:13:35.133+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=77045c9555af
+2019-06-01T10:13:35.133+0000 I CONTROL  [initandlisten] db version v4.0.10
+2019-06-01T10:13:35.134+0000 I CONTROL  [initandlisten] git version: c389e7f69f637f7a1ac3cc9fae843b635f20b766
+2019-06-01T10:13:35.134+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2019-06-01T10:13:35.134+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-06-01T10:13:35.135+0000 I CONTROL  [initandlisten] modules: none
+2019-06-01T10:13:35.135+0000 I CONTROL  [initandlisten] build environment:
+2019-06-01T10:13:35.135+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2019-06-01T10:13:35.136+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2019-06-01T10:13:35.136+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-06-01T10:13:35.136+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true }, storage: { mmapv1: { smallFiles: true } }, systemLog: { destination: "file", path: "/var/log/mongodb/mongod.log" } }
+2019-06-01T10:13:35.139+0000 W STORAGE  [initandlisten] Detected unclean shutdown - /data/db/mongod.lock is not empty.
+2019-06-01T10:13:35.142+0000 I STORAGE  [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-06-01T10:13:35.144+0000 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
+2019-06-01T10:13:35.146+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=487M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-06-01T10:13:44.506+0000 I STORAGE  [initandlisten] WiredTiger message [1559384024:506219][1:0x7f1b1f3fba80], txn-recover: Main recovery loop: starting at 9/19922944 to 10/256
+2019-06-01T10:13:44.532+0000 I STORAGE  [initandlisten] WiredTiger message [1559384024:532422][1:0x7f1b1f3fba80], txn-recover: Recovering log 9 through 10
+2019-06-01T10:13:44.870+0000 I STORAGE  [initandlisten] WiredTiger message [1559384024:870112][1:0x7f1b1f3fba80], txn-recover: Recovering log 10 through 10
+2019-06-01T10:13:44.937+0000 I STORAGE  [initandlisten] WiredTiger message [1559384024:937888][1:0x7f1b1f3fba80], txn-recover: Set global recovery timestamp: 0
+2019-06-01T10:13:44.968+0000 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2019-06-01T10:13:45.033+0000 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2019-06-01T10:13:45.034+0000 I CONTROL  [initandlisten] 
+2019-06-01T10:13:45.034+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-06-01T10:13:45.034+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-06-01T10:13:45.035+0000 I CONTROL  [initandlisten] 
+2019-06-01T10:13:45.087+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2019-06-01T10:13:45.090+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-06-01T10:13:46.039+0000 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
+2019-06-01T10:13:53.128+0000 I NETWORK  [listener] connection accepted from 172.29.0.1:36198 #1 (1 connection now open)
+2019-06-01T10:13:53.129+0000 I NETWORK  [conn1] received client metadata from 172.29.0.1:36198 conn1: { driver: { name: "mongo-java-driver", version: "3T_5.1.1-478-gfd17fbf" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.13.6" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+2019-06-01T10:16:18.746+0000 I NETWORK  [listener] connection accepted from 172.29.0.2:40676 #2 (2 connections now open)
+2019-06-01T10:16:18.748+0000 I NETWORK  [conn2] received client metadata from 172.29.0.2:40676 conn2: { driver: { name: "PyMongo", version: "3.8.0" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.9.125-linuxkit" }, platform: "CPython 3.6.5.final.0" }
+2019-06-01T10:16:18.750+0000 I NETWORK  [listener] connection accepted from 172.29.0.2:40678 #3 (3 connections now open)
+2019-06-01T10:16:18.751+0000 I NETWORK  [conn3] received client metadata from 172.29.0.2:40678 conn3: { driver: { name: "PyMongo", version: "3.8.0" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.9.125-linuxkit" }, platform: "CPython 3.6.5.final.0" }
+2019-06-01T10:16:18.752+0000 I COMMAND  [conn3] CMD: drop mall.timeline_goods
+2019-06-01T10:16:18.753+0000 I STORAGE  [conn3] Finishing collection drop for mall.timeline_goods (58c4f185-0ebe-44a7-9309-3cf7f853579f).
+2019-06-01T10:16:18.821+0000 I STORAGE  [conn3] createCollection: mall.timeline_goods with generated UUID: 60fdab00-5c65-43ae-884c-e5b5dc83a14a
+2019-06-01T10:16:19.265+0000 I NETWORK  [conn3] end connection 172.29.0.2:40678 (2 connections now open)
+2019-06-01T10:16:19.265+0000 I NETWORK  [conn2] end connection 172.29.0.2:40676 (1 connection now open)
+2019-06-01T10:16:50.554+0000 I NETWORK  [listener] connection accepted from 172.29.0.1:36210 #4 (2 connections now open)
+2019-06-01T10:16:50.567+0000 I NETWORK  [conn4] received client metadata from 172.29.0.1:36210 conn4: { driver: { name: "mongo-java-driver", version: "3T_5.1.1-478-gfd17fbf" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.13.6" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+2019-06-01T10:28:27.391+0000 I NETWORK  [listener] connection accepted from 172.29.0.2:40694 #5 (3 connections now open)
+2019-06-01T10:28:27.392+0000 I NETWORK  [conn5] received client metadata from 172.29.0.2:40694 conn5: { driver: { name: "PyMongo", version: "3.8.0" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.9.125-linuxkit" }, platform: "CPython 3.6.5.final.0" }
+2019-06-01T10:28:27.394+0000 I NETWORK  [listener] connection accepted from 172.29.0.2:40696 #6 (4 connections now open)
+2019-06-01T10:28:27.395+0000 I NETWORK  [conn6] received client metadata from 172.29.0.2:40696 conn6: { driver: { name: "PyMongo", version: "3.8.0" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.9.125-linuxkit" }, platform: "CPython 3.6.5.final.0" }
+2019-06-01T10:28:27.396+0000 I COMMAND  [conn6] CMD: drop mall.timeline_goods
+2019-06-01T10:28:27.396+0000 I STORAGE  [conn6] Finishing collection drop for mall.timeline_goods (60fdab00-5c65-43ae-884c-e5b5dc83a14a).
+2019-06-01T10:28:27.468+0000 I STORAGE  [conn6] createCollection: mall.timeline_goods with generated UUID: 3698c392-37b9-4f28-b9b2-45272705e6e9
+2019-06-01T10:28:27.908+0000 I NETWORK  [conn5] end connection 172.29.0.2:40694 (3 connections now open)
+2019-06-01T10:28:27.908+0000 I NETWORK  [conn6] end connection 172.29.0.2:40696 (2 connections now open)
+2019-06-01T10:30:24.015+0000 I NETWORK  [listener] connection accepted from 172.29.0.2:40704 #7 (3 connections now open)
+2019-06-01T10:30:24.016+0000 I NETWORK  [conn7] received client metadata from 172.29.0.2:40704 conn7: { driver: { name: "PyMongo", version: "3.8.0" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.9.125-linuxkit" }, platform: "CPython 3.6.5.final.0" }
+2019-06-01T10:30:24.018+0000 I NETWORK  [listener] connection accepted from 172.29.0.2:40706 #8 (4 connections now open)
+2019-06-01T10:30:24.019+0000 I NETWORK  [conn8] received client metadata from 172.29.0.2:40706 conn8: { driver: { name: "PyMongo", version: "3.8.0" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.9.125-linuxkit" }, platform: "CPython 3.6.5.final.0" }
+2019-06-01T10:30:24.020+0000 I COMMAND  [conn8] CMD: drop mall.timeline_goods
+2019-06-01T10:30:24.021+0000 I STORAGE  [conn8] Finishing collection drop for mall.timeline_goods (3698c392-37b9-4f28-b9b2-45272705e6e9).
+2019-06-01T10:30:24.095+0000 I STORAGE  [conn8] createCollection: mall.timeline_goods with generated UUID: 50c2a0c5-c341-4d0e-a066-2aa12ddf74d5
+2019-06-01T10:30:24.534+0000 I NETWORK  [conn8] end connection 172.29.0.2:40706 (3 connections now open)
+2019-06-01T10:30:24.535+0000 I NETWORK  [conn7] end connection 172.29.0.2:40704 (2 connections now open)

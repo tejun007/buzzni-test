@@ -10,7 +10,7 @@ ADD ./ /client
 
 # Set PATHs
 ENV PATH=$PATH:/client
-ENV PYTHONPATH=$PYTHONPATH:/client
+ENV PYTHONPATH=$PYTHONPATH:/:/client
 
 # execute everyone's favorite pip command, pip install -r
 RUN pip install --trusted-host pypi.python.org -r requirements.txt

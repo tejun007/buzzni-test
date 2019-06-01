@@ -16,6 +16,22 @@ services:
     volumes:
       - ./client:/client
 
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    restart: always
+    environment:
+      MONGO_DATA_DIR: /data/db
+      MONGO_LOG_DIR: /var/log/mongodb/
+      MONGODB_USER: "test"
+      MONGODB_PASS: "test"
+    volumes:
+      - ./database/data/db:/data/db
+      - ./database/log:/var/log/mongodb/
+    ports:
+      - "27017:27017"
+    command: mongod --smallfiles --logpath=/var/log/mongodb/mongod.log
+
   server:
     container_name: buzzni-test-server
     restart: always
@@ -25,23 +41,10 @@ services:
     environment:
       FLASK_DEBUG: 1
       FLASK_APP: ./run.py
+      MONGO_URL: mongodb://mongodb:27017
     image: buzzni-test-server
     ports:
       - "5001:5001"
     volumes:
      - ./server:/server
 
-  mongodb:
-    image: mongo:latest
-    container_name: "mongodb"
-    restart: always
-    environment:
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/dev/null
-      - MONGODB_USER="test"
-      - MONGODB_PASS="test"
-    volumes:
-      - ./data/db:/data/db
-    ports:
-      - "27017:27017"
-    command: mongod --smallfiles --logpath=/dev/null

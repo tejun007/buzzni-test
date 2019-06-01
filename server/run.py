@@ -1,7 +1,7 @@
 import sys
 
-from common.config import Config
-from common.main import create_app
+from server.common.config import Config
+from server.common.main import create_app
 
 app = create_app(Config)
 

@@ -10,14 +10,15 @@ ADD ./ /server
 
 # Set PATHs
 ENV PATH=$PATH:/server
-ENV PYTHONPATH=$PYTHONPATH:/server
+ENV PYTHONPATH=$PYTHONPATH:/:/server
 
 # execute everyone's favorite pip command, pip install -r
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
+
 # unblock port 5000 for the Flask app to run on
 EXPOSE 5001
 
-# execute the Flask app
-CMD ["python", "run.py"]
+# set dataset to mongodb && execute the Flask app
+CMD python databases/import_dataset_to_mongodb.py && python run.py
 
