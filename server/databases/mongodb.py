@@ -1,7 +1,7 @@
 import pymongo
 
-from common.Config import MONGO_DB
+from server.common.config import Config
 
-mongo_client = pymongo.MongoClient(MONGO_DB)
+mongo_client = pymongo.MongoClient(Config.MONGO_DB)
 
 
