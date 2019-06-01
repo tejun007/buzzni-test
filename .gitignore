@@ -72,3 +72,4 @@ fabric.properties
 /server/common/config.py
 /client/web/config.py
 /data/
+/database/
