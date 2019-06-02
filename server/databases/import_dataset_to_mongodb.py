@@ -8,6 +8,10 @@ from server.common.config import Config
 dump_data_dir = os.path.dirname(os.path.abspath(__file__))
 timeline_goods_list = joblib.load(dump_data_dir + "/timeline_goods_dump.dat")
 
+timeline_goods_list = [dict(_id=good['id'],
+                            **good)
+                       for good in timeline_goods_list]
+
 print('')
 print('============ raw dataset ==============')
 print(timeline_goods_list)

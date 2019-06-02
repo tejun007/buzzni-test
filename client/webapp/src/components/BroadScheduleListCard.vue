@@ -1,11 +1,20 @@
 <template>
   <v-list subheader>
-    <v-subheader>편성표 시간</v-subheader>
-
     <v-flex>
-      <broadcast-schedule-list-card-detail />
-    </v-flex>
+      <div>
+        <div>
+          01월 01일 수요일
+        </div>
+        <div>
+          오늘 오전 12시
+        </div>
+      </div>
 
+      <v-flex>
+        <broadcast-schedule-list-card-detail />
+      </v-flex>
+
+    </v-flex>
   </v-list>
 </template>
 

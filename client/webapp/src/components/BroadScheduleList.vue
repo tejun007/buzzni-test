@@ -8,7 +8,9 @@
     </v-toolbar>
 
     <v-list>
-      <broadcast-schedule-list-card />
+      <v-flex>
+        <broadcast-schedule-list-card />
+      </v-flex>
     </v-list>
   </v-card>
 </template>
