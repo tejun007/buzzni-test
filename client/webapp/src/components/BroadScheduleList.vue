@@ -101,8 +101,10 @@
                 {{ $moment(startDateHour, 'YYYYMMDD_H').format('MMM Do dddd') }}
               </div>
             </div>
-            <div class="hour-text-div">
-              {{ $moment(startDateHour, 'YYYYMMDD_H').format('a h') }}시
+            <div class="d-flex justify-center">
+              <div class="hour-text-div">
+                {{ $moment(startDateHour, 'YYYYMMDD_H').format('a h') }}시
+              </div>
             </div>
           </div>
         </v-flex>
@@ -450,17 +452,15 @@ export default {
   }
 
   .datetime-wrapper {
-    display: flex;
-    justify-content: center;
     padding-bottom: 10px;
     padding-top: 5px;
   }
 
   .hour-text-div {
-    width: 100px;
+    max-width: 100px;
     text-align: center;
     border-radius: 10px;
-    color: #ffffff;
+    color: #fff;
     background-color: #b0bec5;
   }
 </style>
