@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 const routerOptions = [
   { path: '/', component: 'BroadScheduleList' },
-  { path: '/schedule', component: 'BroadScheduleList' }
+  { path: '/timeline', component: 'BroadScheduleList' }
 ]
 
 const routes = routerOptions.map(route => {
