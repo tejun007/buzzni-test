@@ -89,12 +89,10 @@ def create_v1_timeline(api):
                 query_filter = {}
 
                 if mall_names and mall_names != '':
-                    print('mall_names', mall_names)
                     mall_names = mall_names.split('|')
                     query_filter.update({'mall_name': {'$in': mall_names}})
 
                 if cate1s and cate1s != '':
-                    print('cate1s', cate1s)
                     cate1s = cate1s.split('|')
                     query_filter.update({'cate1': {'$in': cate1s}})
 
@@ -141,7 +139,6 @@ def create_v1_timeline(api):
                     'org_price': {'$ne': 0},
                     'price': {'$ne': 0}
                 })
-                print(query_filter)
                 timeline_goods = list(timeline_goods_collection.find(query_filter).sort('date', pymongo.ASCENDING))
                 if not timeline_goods:
                     return dict(success=False,
