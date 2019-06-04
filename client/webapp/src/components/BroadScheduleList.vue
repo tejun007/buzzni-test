@@ -93,7 +93,9 @@
               v-for="(goodsByStartDateHour, startDateHour) in timelineGoods">
         <v-flex :id="startDateHour">
           <div id="liveDiv" class="datetime-wrapper" v-if="startDateHour === currentDateTime">
-            <div class="live-text-div">LIVE</div>
+            <div class="d-flex justify-center">
+              <div class="live-text-div">LIVE</div>
+            </div>
           </div>
           <div class="datetime-wrapper" v-else>
             <div v-if="Object.keys(timelineGoods)[Object.keys(timelineGoods).indexOf(startDateHour)-1]">
@@ -444,7 +446,7 @@ export default {
   }
 
   .live-text-div {
-    width: 100px;
+    max-width: 100px;
     text-align: center;
     border-radius: 10px;
     color: #ffffff;
