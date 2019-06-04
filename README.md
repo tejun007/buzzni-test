@@ -92,3 +92,20 @@
 ##Reference
 - docker 설명 페이지: https://docs.docker.com/
 - flask-restplus 페이지: https://flask-restplus.readthedocs.io/en/stable/
+
+## 해당과제 실행 방법
+아래의 방법으로 docker-compose 명령어 실행시 build image, run container 그리고 datebase 셋업이 모두 한번에 됩니다.
+````
+cd <buzzni-test folder>
+docker-compose up 
+````
+
+##과제 페이지 url 
+http://0.0.0.0:5000
+
+## 해당과제 종료 방법
+````
+cd <buzzni-test folder>
+docker-compose stop 
+````
+
