@@ -70,3 +70,25 @@
 ####4. server(API) 개발
 - flask에 flask-restplus를 사용하여 정형화된 포맷에 따른 개발을 통해 조금더 생산성을 높이는 구현을 진행하기위해 노력하였습니다.
 - /apis/v1 => 해당 경로로 주소창 검색시 swagger형식의 API 명세페이지 및 테스팅 페이지 등을 사용할 수 있도록 하였습니다
+
+
+## Key Point
+- Front-end: 
+    - 사용자의 Scroll up/down에 따른 javascript의 동작 제어 및 API 요청 가능하도록 구현하였습니다
+- Back-end: 
+    - docker 에서 client, server, mongodb 으로 서비스를 분리하여 container들를 만듦으로써 향후에 있을 autoscaling 등이 발생시 서로의 의존성을 낮추도록 하였습니다.
+    - 필터링 값들을 메타데이터로 미리 데이터베이스화 하여 앱실행시에만 처음 가져오도록하여 필터링값을 반환하여 전체 상품 목록을 distint해야하는 부담을 덜어줍니다.
+    - flask-restplus를 활용한 api구현의 정형화/단일화를 통해 생산성을 높이도록 하였습니다.
+    - api를 v1, v2등으로 버져닝하여 scalable 하게 구현할 수 있게 api 서버 구조를 설계하였습니다.
+
+## Hurdle Point
+구현시 가장 문제가 되었던 부분은 다음의 두가지였습니다.
+- docker을 처음 사용해보는 상태라 해당 image, container, dockerfile 및 docker-compose 에 대해서 이해하고 헉습할 시간이 필요했고 이로 인해 개발진행에서 많은 delay가 있었습니다.
+- Front-end 개발시 스크롤업을 했을시 새로운 데이터를 fetching하면 이미지가 렌더링 되고나서 스크롤이 자연스래 가장 최근에 추가된 element로 이동하도록 되기때문에, 
+이를 해결하기위해 스크롤업시 가장 상단에 다았을때에 가장 상단에 있던 요소의 아이디를 임시로 저장해 두고 데이터를 API에서 받아오고 난후,
+다시 저장해둔 이전 최상단의 요소 위치로 scroll을 이동시켜서 계속해서 scroll이 같은 위치에 머무르도록 할 수 있었습니다. 
+
+
+##Reference
+- docker 설명 페이지: https://docs.docker.com/
+- flask-restplus 페이지: https://flask-restplus.readthedocs.io/en/stable/
